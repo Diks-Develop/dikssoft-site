@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT-компания «Dikssoft»</title>
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --text: #212529;
+      --accent: #343a40;
+      --section: #ffffff;
+      --footer: #e9ecef;
+    }
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --accent: #1f1f1f;
+      --section: #1a1a1a;
+      --footer: #2a2a2a;
+    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    nav {
+      position: sticky; top: 0;
+      display: flex; gap: 20px;
+      justify-content: center; align-items: center;
+      padding: 10px 20px;
+      background: var(--accent);
+      z-index: 1000;
+    }
+    nav a, nav button {
+      color: #fff; text-decoration: none;
+      background: none; border: none; cursor: pointer;
+      font-weight: bold; font-size: 1em;
+    }
+    nav a:hover, nav button:hover { text-decoration: underline; }
+    header, section, footer {
+      max-width: 1000px; margin: auto;
+      padding: 40px 20px;
+      background: var(--section);
+      transition: background .3s, color .3s;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeInUp .8s forwards;
+    }
+    section:nth-of-type(2) { animation-delay: .2s; }
+    section:nth-of-type(3) { animation-delay: .4s; }
+    section:nth-of-type(4) { animation-delay: .6s; }
+    footer               { animation-delay: .8s; }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    header {
+      background: var(--accent); color: #fff;
+      text-align: center;
+    }
+    h1, h2 { margin-top: 0; color: var(--text); }
+    .services ul { list-style: none; padding: 0; }
+    .services li { margin: 10px 0; }
+    .clients blockquote {
+      font-style: italic;
+      margin: 20px 0;
+    }
+    footer {
+      background: var(--footer);
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 20px;
+      text-align: center; padding-bottom: 60px;
+    }
+    .contact-item {
+      display: flex; flex-direction: column;
+      align-items: center; width: 120px;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .contact-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    }
+    .contact-item img {
+      width: 32px; height: 32px; margin-bottom: 5px;
+      transition: transform .3s;
+    }
+    .contact-item:hover img { transform: scale(1.1); }
+    .footer-note {
+      width: 100%; text-align: center;
+      font-size: 12px; color: #666; margin-top: 30px;
+    }
+    @media(max-width:768px) {
+      nav { flex-wrap: wrap; gap:10px; }
+      header, section, footer { padding:20px 15px; }
+      h1 { font-size:1.5em; }
+      .contact-item {
+        width:100%; flex-direction:row;
+        justify-content:flex-start; gap:10px;
+        text-align:left;
+      }
+      .contact-item img { width:24px; height:24px; }
+      footer { flex-direction:column; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a id="navAbout" href="#about">О нас</a>
+    <a id="navServices" href="#services">Услуги</a>
+    <a id="navClients" href="#clients">Отзывы</a>
+    <a id="navContacts" href="#contacts">Контакты</a>
+    <button id="btnTheme">🌓</button>
+    <button id="btnLang">En</button>
+  </nav>
+
+  <header>
+    <h1 id="headerTitle">IT-компания «Dikssoft»</h1>
+    <p id="headerSubtitle">Профессиональные решения на базе 1С с 2017 года</p>
+  </header>
+
+  <section id="about">
+    <h2 id="aboutHeading">О нас</h2>
+    <p id="aboutText">
+      С 2017 года мы сопровождаем, разрабатываем и внедряем системы на базе 1С:Предприятие.
+      Более 10 довольных клиентов уже оценили наш подход — индивидуально, профессионально и с заботой о вашем бизнесе.
+    </p>
+  </section>
+
+  <section id="services" class="services">
+    <h2 id="servicesHeading">Наши услуги</h2>
+    <ul id="servicesList">
+      <li>📦 Помощь в выборе, покупке и установке 1С</li>
+      <li>🎓 Обучение пользователей</li>
+      <li>💬 Консультации и техническая поддержка</li>
+      <li>🔄 Регулярные обновления и доступ к методическим материалам</li>
+      <li>🧩 Разработка и адаптация конфигураций</li>
+      <li>🔗 Интеграция с другими системами (Битрикс, сайты и пр.)</li>
+    </ul>
+  </section>
+
+  <section id="clients" class="clients">
+    <h2 id="clientsHeading">Клиенты о нас</h2>
+    <blockquote id="client1">
+      “Сотрудничество с вами дало нашему бизнесу второе дыхание.” — ООО «Бизнес Партнер»
+    </blockquote>
+    <blockquote id="client2">
+      “Спасибо за грамотную интеграцию с сайтом и поддержку!” — ИП Смирнов А.А.
+    </blockquote>
+  </section>
+
+  <footer id="contacts">
+    <h2 id="contactsHeading">Контакты</h2>
+    <div class="contact-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"/>
+      <span><a href="https://t.me/+79957711340">Telegram</a></span>
+    </div>
+    <div class="contact-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/3536/3536445.png" alt="WhatsApp"/>
+      <span><a href="https://wa.me/79957711340">WhatsApp</a></span>
+    </div>
+    <div class="contact-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968783.png" alt="Teams"/>
+      <span>Teams: john_diks</span>
+    </div>
+    <div class="contact-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"/>
+      <span><a href="mailto:Diks.office@gmail.com">Diks.office@gmail.com</a></span>
+    </div>
+    <div class="footer-note">
+      Дикс Анастасия Александровна ИНН 550615895143
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      ru: {
+        navAbout: 'О нас', navServices: 'Услуги', navClients: 'Отзывы',
+        navContacts: 'Контакты',
+        headerTitle: 'IT-компания «Dikssoft»',
+        headerSubtitle: 'Профессиональные решения на базе 1С с 2017 года',
+        aboutHeading: 'О нас',
+        aboutText: 'С 2017 года мы сопровождаем, разрабатываем и внедряем системы на базе 1С:Предприятие. Более 10 довольных клиентов уже оценили наш подход — индивидуально, профессионально и с заботой о вашем бизнесе.',
+        servicesHeading: 'Наши услуги',
+        servicesList: [
+          '📦 Помощь в выборе, покупке и установке 1С',
+          '🎓 Обучение пользователей',
+          '💬 Консультации и техническая поддержка',
+          '🔄 Регулярные обновления и доступ к методическим материалам',
+          '🧩 Разработка и адаптация конфигураций',
+          '🔗 Интеграция с другими системами (Битрикс, сайты и пр.)'
+        ],
+        clientsHeading: 'Клиенты о нас',
+        client1: '“Сотрудничество с вами дало нашему бизнесу второе дыхание.” — ООО «Бизнес Партнер»',
+        client2: '“Спасибо за грамотную интеграцию с сайтом и поддержку!” — ИП Смирнов А.А.',
+        contactsHeading: 'Контакты',
+        langButton: 'En'
+      },
+      en: {
+        navAbout: 'About', navServices: 'Services', navClients: 'Testimonials',
+        navContacts: 'Contacts',
+        headerTitle: 'IT Company «Dikssoft»',
+        headerSubtitle: 'Professional 1C-based solutions since 2017',
+        aboutHeading: 'About Us',
+        aboutText: 'Since 2017, we have been supporting, developing, and implementing 1C:Enterprise systems. More than 10 satisfied clients have appreciated our individual, professional, and caring approach to your business.',
+        servicesHeading: 'Our Services',
+        servicesList: [
+          '📦 Assistance in choosing, purchasing, and installing 1C',
+          '🎓 User training',
+          '💬 Consultation and technical support',
+          '🔄 Regular updates and access to methodological materials',
+          '🧩 Development and customization of configurations',
+          '🔗 Integration with other systems (Bitrix, websites, etc.)'
+        ],
+        clientsHeading: 'Client Testimonials',
+        client1: '“Cooperation with you gave our business a new lease on life.” — Business Partner LLC',
+        client2: '“Thank you for the professional integration with our website and support!” — A. Smyrnov, Ind. Entrepreneur',
+        contactsHeading: 'Contacts',
+        langButton: 'Ru'
+      }
+    };
+
+    const elems = {
+      navAbout: document.getElementById('navAbout'),
+      navServices: document.getElementById('navServices'),
+      navClients: document.getElementById('navClients'),
+      navContacts: document.getElementById('navContacts'),
+      headerTitle: document.getElementById('headerTitle'),
+      headerSubtitle: document.getElementById
