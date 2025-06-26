@@ -129,18 +129,18 @@
     </ul>
   </section>
 
-<!-- Лента с логотипами клиентов -->
-<section style="background: #f8f9fa; padding: 2rem 0;">
-  <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem;">Наши клиенты</h2>
+
+<!-- Лента логотипов клиентов -->
+<section class="clients-section">
+  <h2>Наши клиенты</h2>
   <div class="logo-slider">
     <div class="logo-track">
-      <!-- Замените src на свои логотипы -->
       <img src="logos/logo1.png" alt="Клиент 1">
       <img src="logos/logo2.png" alt="Клиент 2">
       <img src="logos/logo3.png" alt="Клиент 3">
       <img src="logos/logo4.png" alt="Клиент 4">
       <img src="logos/logo5.png" alt="Клиент 5">
-      <!-- Дублируем для бесконечной анимации -->
+      <!-- Повтор для бесконечного эффекта -->
       <img src="logos/logo1.png" alt="Клиент 1">
       <img src="logos/logo2.png" alt="Клиент 2">
       <img src="logos/logo3.png" alt="Клиент 3">
@@ -151,6 +151,20 @@
 </section>
 
 <style>
+/* Общие стили */
+.clients-section {
+  padding: 2rem;
+  text-align: center;
+  background: var(--section-bg);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.clients-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
 .logo-slider {
   overflow: hidden;
   position: relative;
@@ -165,10 +179,15 @@
   gap: 40px;
 }
 
+/* Пауза анимации при наведении */
+.logo-slider:hover .logo-track {
+  animation-play-state: paused;
+}
+
 .logo-track img {
   height: 60px;
   object-fit: contain;
-  opacity: 0.8;
+  opacity: 0.7;
   transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -177,6 +196,7 @@
   opacity: 1;
 }
 
+/* Анимация прокрутки */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -185,6 +205,24 @@
     transform: translateX(-50%);
   }
 }
+
+/* Светлая тема (по умолчанию) */
+:root {
+  --section-bg: #f8f9fa;
+  --text-color: #212529;
+}
+
+/* Тёмная тема */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --section-bg: #121212;
+    --text-color: #f1f1f1;
+  }
+}
+</style>
+
+
+  
 </style>
   <section id="clients" class="clients">
     <h2 id="clientsHeading">Клиенты о нас</h2>
@@ -203,9 +241,13 @@
       <span><a href="https://wa.me/79957711340">WhatsApp</a></span>
     </div>
     <div class="contact-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968783.png" alt="Teams"/>
-      <span>Teams: john_diks</span>
-    </div>
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968783.png" alt="Teams" />
+  <span>
+    <a href="https://teams.microsoft.com/l/chat/0/0?users=john_diks@example.com" target="_blank" rel="noopener noreferrer">
+      MS Teams
+    </a>
+  </span>
+</div>
     <div class="contact-item">
       <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"/>
       <span><a href="mailto:Diks.office@gmail.com">Diks.office@gmail.com</a></span>
