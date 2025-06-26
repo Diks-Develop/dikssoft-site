@@ -104,7 +104,7 @@
     <a id="navAbout"    href="#about">О нас</a>
     <a id="navServices" href="#services">Услуги</a>
     <a id="navClients"  href="#clients">Отзывы</a>
-    <a id="navContacts" href="#contacts">Контакты</a>
+    <a id="navContacts" href="#contacts"></a>
     <button id="btnTheme">🌓</button>
     <button id="btnLang">En</button>
   </nav>
@@ -129,6 +129,63 @@
     </ul>
   </section>
 
+<!-- Лента с логотипами клиентов -->
+<section style="background: #f8f9fa; padding: 2rem 0;">
+  <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem;">Наши клиенты</h2>
+  <div class="logo-slider">
+    <div class="logo-track">
+      <!-- Замените src на свои логотипы -->
+      <img src="logos/logo1.png" alt="Клиент 1">
+      <img src="logos/logo2.png" alt="Клиент 2">
+      <img src="logos/logo3.png" alt="Клиент 3">
+      <img src="logos/logo4.png" alt="Клиент 4">
+      <img src="logos/logo5.png" alt="Клиент 5">
+      <!-- Дублируем для бесконечной анимации -->
+      <img src="logos/logo1.png" alt="Клиент 1">
+      <img src="logos/logo2.png" alt="Клиент 2">
+      <img src="logos/logo3.png" alt="Клиент 3">
+      <img src="logos/logo4.png" alt="Клиент 4">
+      <img src="logos/logo5.png" alt="Клиент 5">
+    </div>
+  </div>
+</section>
+
+<style>
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  height: 100px;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo-track img {
+  height: 60px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.logo-track img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+</style>
   <section id="clients" class="clients">
     <h2 id="clientsHeading">Клиенты о нас</h2>
     <blockquote id="client1"></blockquote>
@@ -136,7 +193,7 @@
   </section>
 
   <footer id="contacts">
-    <h2 id="contactsHeading">Контакты</h2>
+    <h2 id="contactsHeading"></h2>
     <div class="contact-item">
       <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"/>
       <span><a href="https://t.me/+79957711340">Telegram</a></span>
@@ -179,10 +236,7 @@
           '🧩 Разработка и адаптация конфигураций',
           '🔗 Интеграция с другими системами (Битрикс, сайты и пр.)'
         ],
-        clientsHeading: 'Клиенты о нас',
-        client1: '“Сотрудничество с вами дало нашему бизнесу второе дыхание.” — ООО «Бизнес Партнер»',
-        client2: '“Спасибо за грамотную интеграцию с сайтом и поддержку!” — ИП Смирнов А.А.',
-        contactsHeading: 'Контакты',
+        //contactsHeading: 'Контакты',
         langButton: 'En'
       },
       en: {
@@ -203,10 +257,10 @@
           '🧩 Development and customization of configurations',
           '🔗 Integration with other systems (Bitrix, websites etc.)'
         ],
-        clientsHeading: 'Client Testimonials',
-        client1: '“Cooperation with you gave our business a new lease on life.” — Business Partner LLC',
-        client2: '“Thank you for the professional integration with our website and support!” — A. Smyrnov, Ind. Entrepreneur',
-        contactsHeading: 'Contacts',
+        //clientsHeading: 'Client Testimonials',
+        //client1: '“Cooperation with you gave our business a new lease on life.” — Business Partner LLC',
+        //client2: '“Thank you for the professional integration with our website and support!” — A. Smyrnov, Ind. Entrepreneur',
+        //contactsHeading: 'Contacts',
         langButton: 'Ru'
       }
     };
